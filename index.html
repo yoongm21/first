@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b2928">
+  <meta name="description" content="쿠폰팩과 2,000 코인을 더해 오늘의 스타일을 더 가볍게. 아뜨랑스 Final Count 프로모션을 만나보세요.">
+  <title>Final Count! — ATTRANGS</title>
+  <style>
+    :root { color-scheme: light; --ink:#272524; --muted:#80736d; --rose:#e8b8ae; --paper:#fbf9f6; --line:#e7e0da; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+    a { color: inherit; }
+    .notice { min-height: 36px; display: grid; place-items: center; padding: 8px 16px; background: #796257; color: #fff; font-size: 12px; letter-spacing: .02em; text-align: center; }
+    header { position: relative; z-index: 2; display:flex; align-items:center; gap:32px; min-height:68px; padding: 0 clamp(20px, 5vw, 84px); background:#242322; color:#f8f4f1; border-bottom:1px solid #ffffff18; }
+    .brand { flex:none; font-size:20px; font-weight:800; letter-spacing:.24em; text-decoration:none; }
+    nav { display:flex; align-items:center; gap:clamp(12px, 1.7vw, 26px); min-width:0; overflow:hidden; white-space:nowrap; font-size:12px; }
+    nav a { text-decoration:none; opacity:.8; }
+    nav a:hover, nav a.active { opacity:1; color:#efc2b9; }
+    .nav-actions { margin-left:auto; display:flex; gap:16px; align-items:center; font-size:12px; white-space:nowrap; }
+    .nav-actions a { text-decoration:none; }
+    .hero { min-height: min(680px, 66vw); position:relative; overflow:hidden; display:grid; grid-template-columns:1.03fr .97fr; align-items:center; padding:clamp(48px, 7vw, 108px) clamp(28px, 9vw, 160px); color:white; background-color:#292725; background-image:linear-gradient(90deg,#282625 0%,#282625ef 44%,#28262538 100%), url("assets/reference.png"); background-repeat:no-repeat; background-position:center, center 56%; background-size:cover, cover; }
+    .hero::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; background-image:linear-gradient(#8f796d 1px,transparent 1px),linear-gradient(90deg,#8f796d 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(90deg,#000,transparent 85%); }
+    .hero-copy { position:relative; z-index:1; max-width:700px; }
+    .eyebrow { margin:0 0 18px; font-size:clamp(16px, 2vw, 27px); font-weight:500; letter-spacing:.025em; }
+    h1 { margin:0; color:#efb9af; font-family:Georgia, "Times New Roman", serif; font-size:clamp(62px, 8.4vw, 128px); font-weight:400; letter-spacing:-.065em; line-height:.95; }
+    .hero-desc { margin:24px 0 28px; color:#e3dcda; font-size:15px; line-height:1.8; }
+    .pills { display:flex; flex-wrap:wrap; gap:10px; }
+    .pill { padding:11px 20px; border-radius:99px; background:#fff; color:#34302e; font-size:15px; font-weight:700; }
+    .pill.accent { background:#efc1b8; }
+    .hero-cta { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:0 23px; border:1px solid #fff; border-radius:3px; color:#fff; text-decoration:none; font-size:14px; font-weight:700; transition:transform .2s, background .2s; }
+    .button:hover { transform:translateY(-2px); background:#ffffff16; }
+    .button.primary { border-color:#efc1b8; background:#efc1b8; color:#2d2826; }
+    .hero-note { position:absolute; z-index:1; right:clamp(24px, 5vw, 76px); bottom:24px; color:#f4efecb0; font-size:11px; }
+    .intro { padding:72px 24px 46px; text-align:center; background:#fff; }
+    .intro .small { color:#a47c70; font-family:Georgia,serif; font-size:14px; letter-spacing:.2em; text-transform:uppercase; }
+    .intro h2 { margin:12px 0 10px; font-size:clamp(24px,3vw,36px); font-weight:500; }
+    .intro p { margin:0; color:#80736d; font-size:14px; line-height:1.9; }
+    .perks { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1120px; padding:0 24px 76px; margin:0 auto; background:#fff; }
+    .perk { padding:29px 26px; border:1px solid var(--line); background:#fff; text-align:center; }
+    .perk .number { display:block; margin-bottom:9px; color:#b98d80; font-family:Georgia,serif; font-size:13px; letter-spacing:.18em; }
+    .perk h3 { margin:0 0 9px; font-size:17px; }
+    .perk p { margin:0; color:#827873; font-size:13px; line-height:1.75; }
+    .offer { padding:72px 24px 80px; text-align:center; background:#f5f0eb; }
+    .offer h2 { margin:0 0 12px; font-size:28px; font-weight:500; }
+    .offer p { margin:0 auto 24px; color:#796f69; font-size:14px; line-height:1.8; }
+    .offer .button { border-color:#292725; background:#292725; color:#fff; }
+    .timer { display:inline-flex; gap:10px; align-items:center; margin:0 0 26px; padding:10px 15px; border:1px solid #cdbdb3; border-radius:3px; color:#66534b; font-variant-numeric:tabular-nums; font-size:14px; letter-spacing:.12em; }
+    footer { padding:28px 24px; background:#242322; color:#bdb5b0; text-align:center; font-size:11px; line-height:1.8; }
+    @media (max-width: 980px) { nav { gap:14px; } nav a:nth-child(n+6) { display:none; } .nav-actions a:nth-child(-n+2) { display:none; } .hero { min-height:560px; grid-template-columns:1fr; background-position:center, 62% center; } .hero-copy { max-width:560px; } }
+    @media (max-width: 620px) { .notice { min-height:34px; font-size:11px; } header { min-height:58px; padding:0 18px; gap:16px; } .brand { font-size:17px; } nav { display:none; } .nav-actions { gap:12px; } .hero { min-height:640px; padding:58px 24px 90px; align-items:start; background-image:linear-gradient(180deg,#282625 0%,#282625ed 44%,#28262560 100%), url("assets/reference.png"); background-position:center, 61% center; background-size:cover, auto 100%; } .hero::before { background-size:22px 22px; } .eyebrow { font-size:16px; } h1 { font-size:clamp(58px, 16vw, 82px); } .hero-desc { font-size:13px; } .pill { padding:9px 13px; font-size:12px; } .button { min-height:44px; padding:0 16px; font-size:13px; } .hero-note { right:20px; bottom:16px; } .intro { padding:56px 20px 34px; } .perks { grid-template-columns:1fr; gap:10px; padding:0 18px 54px; } .perk { padding:23px 18px; } .offer { padding:58px 22px; } .offer h2 { font-size:24px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="notice">오늘 밤 9시까지 주문하면 오늘 출발</div>
+  <header>
+    <a class="brand" href="#top" aria-label="아뜨랑스 홈">ATTRANGS</a>
+    <nav aria-label="주요 메뉴">
+      <a class="active" href="#benefits">BEST</a><a href="#benefits">NEW</a><a href="#benefits">1st 겨울룩북</a><a href="#benefits">하객룩</a><a href="#benefits">어텀 투게더</a><a href="#benefits">MADE</a><a href="#benefits">오늘의 할인</a><a href="#benefits">원피스</a><a href="#benefits">니트</a><a href="#benefits">티셔츠</a>
+    </nav>
+    <div class="nav-actions"><a href="#benefits" aria-label="검색">⌕</a><a href="#benefits">로그인</a><a href="#benefits">KOR</a></div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">( 혜택 ) + ( 혜택 ) = 고민 끝!</p>
+        <h1 id="hero-title">Final<br>Count!</h1>
+        <p class="hero-desc">기다렸던 쿠폰과 코인을 한 번에.<br>마지막 혜택을 더해 오늘의 스타일을 완성해 보세요.</p>
+        <div class="pills" aria-label="프로모션 혜택"><span class="pill">할인 쿠폰팩</span><span class="pill">2,000 코인</span><span class="pill accent">~80% OFF</span></div>
+        <div class="hero-cta"><a class="button primary" href="#offer">혜택 확인하기 <span aria-hidden="true">&nbsp;↗</span></a><a class="button" href="#benefits">쿠폰팩 자세히</a></div>
+      </div>
+      <span class="hero-note">ATTRANGS · FINAL COUNT EVENT</span>
+    </section>
+    <section class="intro" id="benefits">
+      <span class="small">Final benefit</span>
+      <h2>오늘의 장면을 함께 고민합니다</h2>
+      <p>평범한 하루부터 가장 빛나는 순간까지,<br>아뜨랑스가 준비한 마지막 혜택으로 가볍게 만나보세요.</p>
+    </section>
+    <section class="perks" aria-label="프로모션 혜택 상세">
+      <article class="perk"><span class="number">01 / COUPON</span><h3>할인 쿠폰팩</h3><p>장바구니에 담아둔 아이템에<br>쿠폰 혜택을 더해보세요.</p></article>
+      <article class="perk"><span class="number">02 / COIN</span><h3>2,000 코인</h3><p>쿠폰과 함께 사용해<br>더 기분 좋은 쇼핑을 완성하세요.</p></article>
+      <article class="perk"><span class="number">03 / STYLE</span><h3>오늘의 스타일</h3><p>새 시즌의 감각적인 룩을<br>특별한 혜택으로 만나보세요.</p></article>
+    </section>
+    <section class="offer" id="offer">
+      <h2>Final Count 혜택을 확인하세요</h2>
+      <p>회원에게 제공되는 쿠폰 및 코인 적용 조건은<br>상품과 주문 금액에 따라 달라질 수 있습니다.</p>
+      <div class="timer" aria-live="polite"><span>오늘의 혜택 종료까지</span><strong id="countdown">--:--:--</strong></div><br>
+      <a class="button" href="#top">프로모션 둘러보기&nbsp; ↗</a>
+    </section>
+  </main>
+  <footer>본 페이지는 업로드된 프로모션 이미지를 참고해 제작한 시안입니다.<br>ATTRANGS · Final Count! Campaign</footer>
+  <script>
+    const clock = document.getElementById('countdown');
+    function tick() {
+      const now = new Date();
+      const end = new Date(now);
+      end.setHours(21, 0, 0, 0);
+      if (now >= end) end.setDate(end.getDate() + 1);
+      const left = Math.max(0, end - now);
+      const h = String(Math.floor(left / 3600000)).padStart(2, '0');
+      const m = String(Math.floor(left % 3600000 / 60000)).padStart(2, '0');
+      const s = String(Math.floor(left % 60000 / 1000)).padStart(2, '0');
+      clock.textContent = `${h}:${m}:${s}`;
+    }
+    tick(); setInterval(tick, 1000);
+  </script>
+</body>
+</html>
